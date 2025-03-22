@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    
+    <div class="container">
+        
+        <div id="addContainer">
+            <form action="" onsubmit="addTasks(event)" id="task-form">
+                <div class="addForm">
+                    <h1 style="color:#bf2929;">Just Do It!</h1>
+                    <label for="description">Enter task :</label>
+                    <input type="text" placeholder="Task Description" id="description">
+                </div>
+                <div class="addForm">
+                   
+                    <label for="date">Enter deadline :</label>
+                    <input type="date" name="deadline" id="date">
+                </div>
+                <div class="addForm">
+                    <label for="category">Choose a category :</label>
+                    <select id="category">
+                        <option value="work">Work</option>
+                        <option value="personal">Personal</option>
+                        <option value="health">Health</option>
+                        <option value="learning">Learning</option>
+                    </select>
+                </div>
+                <button type="submit" id="sub">Add Task</button>
+            </form>
+        </div>
+        <div id="tasksContainer">
+            <div class="taskList">
+                <button class="categoryButton" onclick="displayTasks('work',event)">Work</button>
+                <button class="categoryButton" onclick="displayTasks('personal',event)">Personal</button>
+                <button class="categoryButton" onclick="displayTasks('health',event)">Health</button>
+                <button class="categoryButton" onclick="displayTasks('learning',event)">Learning</button>
+            </div>
+            <div id="displayDiv">
+
+            </div>
+            
+            
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

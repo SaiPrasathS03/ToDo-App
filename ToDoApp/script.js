@@ -1,8 +1,8 @@
 function loadTasks() {
-    // Retrieve tasks from localStorage (or initialize with empty tasks if none exist)
+    
     const storedTasks = localStorage.getItem('tasks');
     if (storedTasks) {
-        return JSON.parse(storedTasks); // Parse the stored string to an object
+        return JSON.parse(storedTasks);
     } else {
         return {
             work: [],
@@ -13,13 +13,12 @@ function loadTasks() {
     }
 }
 
-// Function to save tasks to localStorage
+
 function saveTasks() {
-    localStorage.setItem('tasks', JSON.stringify(tasks)); // Convert tasks object to a string and store it
+    localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 
-// Example data: List of tasks categorized by type (loaded from localStorage initially)
 let tasks = loadTasks();
 console.log(tasks);
 
@@ -28,8 +27,7 @@ function addTasks(event){
     const desc = document.getElementById('description').value;
     const date = document.getElementById('date').value;
     const category= document.getElementById('category').value;
-    // console.log(category);
-
+    
     if (!desc || !date) {
         alert("Are you mad?");
         return;
@@ -52,10 +50,10 @@ function displayTasks(category,event) {
     
     div.innerHTML = "";
 
-    // Get tasks for the selected category
+    
     const selectedTasks = tasks[category];
 
-    // Check if there are tasks in the selected category
+    
     if (selectedTasks && selectedTasks.length > 0) {
         selectedTasks.forEach((task,index) => {
             let taskDesc = task.description;
@@ -80,7 +78,7 @@ function displayTasks(category,event) {
 
 function fade(index) {
     let taskDiv = document.getElementById(`taskDiv${index}`);
-    taskDiv.classList.toggle('faded'); // This will add or remove the 'faded' class
+    taskDiv.classList.toggle('faded');
 }
 
 
@@ -112,11 +110,7 @@ function editClicked(index,category){
 
 function deleteTask(index, category) {
     let selectedTasks = tasks[category];
-    selectedTasks.splice(index, 1); // Remove the task at the given index
-
-    // Save updated tasks to localStorage
+    selectedTasks.splice(index, 1);
     saveTasks(tasks);
-
-    // Re-render the tasks after deletion
     displayTasks(category);
 }

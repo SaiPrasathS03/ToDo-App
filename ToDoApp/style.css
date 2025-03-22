@@ -82,9 +82,7 @@ input,select{
     
 }
 .taskList{
-    /* display: flex; */
     background-color: #3c3b3b;  
-    /* padding: 15px;                */
     border-radius: 8px;         
     border: 4px solid #444;      
     margin: 10px; 
@@ -114,12 +112,12 @@ button{
     width: 70%;
     margin-left: 10%;
     margin-right: 20%;
-    transition: opacity 1s ease;  /* Smooth transition for opacity */
+    transition: opacity 1s ease; 
     opacity: 1;
 }
 
 
-/* Class that will fade out the div */
+
 .taskList.faded {
-    opacity: 0.3;  /* Make the div invisible */
+    opacity: 0.3;  
 }
